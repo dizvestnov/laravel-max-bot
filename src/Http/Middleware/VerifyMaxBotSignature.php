@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Dizvestnov\LaravelMaxBot\Http\Middleware;
 
-use Dizvestnov\LaravelMaxBot\Exceptions\WebhookSignatureException;
 use Closure;
 use Illuminate\Http\Request;
 
@@ -21,14 +20,14 @@ class VerifyMaxBotSignature
         $signature = $request->header('X-Max-Signature');
 
         if ($signature === null || $signature === '') {
-            throw new WebhookSignatureException('Missing webhook signature header.');
+            abort(403, 'Missing webhook signature header.');
         }
 
         $rawBody  = $request->getContent();
         $expected = 'sha256=' . hash_hmac('sha256', $rawBody, $secret);
 
         if (!hash_equals($expected, $signature)) {
-            throw new WebhookSignatureException('Invalid webhook signature.');
+            abort(403, 'Invalid webhook signature.');
         }
 
         return $next($request);
