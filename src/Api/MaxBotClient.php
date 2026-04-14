@@ -41,7 +41,20 @@ class MaxBotClient implements MaxBotClientInterface
 
     public function sendMessage(array $params): array
     {
-        return $this->request('POST', 'messages', ['json' => $params]);
+        $queryKeys = ['user_id', 'chat_id', 'disable_link_preview'];
+        $query = [];
+
+        foreach ($queryKeys as $key) {
+            if (array_key_exists($key, $params)) {
+                $query[$key] = $params[$key];
+                unset($params[$key]);
+            }
+        }
+
+        return $this->request('POST', 'messages', [
+            'query' => $query,
+            'json'  => $params,
+        ]);
     }
 
     public function editMessage(array $params): array
