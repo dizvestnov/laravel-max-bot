@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Tests;
+namespace Dizvestnov\LaravelMaxBot\Tests;
 
-use {YourVendor}\LaravelMaxBot\Facades\MaxBot;
-use {YourVendor}\LaravelMaxBot\MaxBotServiceProvider;
+use Dizvestnov\LaravelMaxBot\Facades\MaxBot;
+use Dizvestnov\LaravelMaxBot\MaxBotServiceProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase

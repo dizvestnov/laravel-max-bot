@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Enums;
+namespace Dizvestnov\LaravelMaxBot\Enums;
 
 enum ButtonType: string
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Jobs;
+namespace Dizvestnov\LaravelMaxBot\Jobs;
 
-use {YourVendor}\LaravelMaxBot\Events\UpdateEventFactory;
+use Dizvestnov\LaravelMaxBot\Events\UpdateEventFactory;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;

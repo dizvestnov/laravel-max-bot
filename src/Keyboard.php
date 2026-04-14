@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot;
+namespace Dizvestnov\LaravelMaxBot;
 
-use {YourVendor}\LaravelMaxBot\Contracts\ButtonInterface;
+use Dizvestnov\LaravelMaxBot\Contracts\ButtonInterface;
 
 final class Keyboard
 {

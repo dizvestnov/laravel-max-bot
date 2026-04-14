@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Contracts;
+namespace Dizvestnov\LaravelMaxBot\Contracts;
 
 interface ButtonInterface
 {

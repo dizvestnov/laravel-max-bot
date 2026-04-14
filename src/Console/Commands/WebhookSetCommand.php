@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Console\Commands;
+namespace Dizvestnov\LaravelMaxBot\Console\Commands;
 
-use {YourVendor}\LaravelMaxBot\Contracts\MaxBotClientInterface;
+use Dizvestnov\LaravelMaxBot\Contracts\MaxBotClientInterface;
 use Illuminate\Console\Command;
 
 class WebhookSetCommand extends Command

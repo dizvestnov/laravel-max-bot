@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Tests\Unit\Conversation;
+namespace Dizvestnov\LaravelMaxBot\Tests\Unit\Conversation;
 
-use {YourVendor}\LaravelMaxBot\Conversation\StateManager;
-use {YourVendor}\LaravelMaxBot\Tests\TestCase;
+use Dizvestnov\LaravelMaxBot\Conversation\StateManager;
+use Dizvestnov\LaravelMaxBot\Tests\TestCase;
 use Illuminate\Cache\ArrayStore;
 use Illuminate\Cache\Repository;
 

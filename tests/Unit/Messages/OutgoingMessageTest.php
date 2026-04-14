@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Tests\Unit\Messages;
+namespace Dizvestnov\LaravelMaxBot\Tests\Unit\Messages;
 
-use {YourVendor}\LaravelMaxBot\Buttons\CallbackButton;
-use {YourVendor}\LaravelMaxBot\Keyboard;
-use {YourVendor}\LaravelMaxBot\Messages\OutgoingMessage;
-use {YourVendor}\LaravelMaxBot\Tests\TestCase;
+use Dizvestnov\LaravelMaxBot\Buttons\CallbackButton;
+use Dizvestnov\LaravelMaxBot\Keyboard;
+use Dizvestnov\LaravelMaxBot\Messages\OutgoingMessage;
+use Dizvestnov\LaravelMaxBot\Tests\TestCase;
 
 class OutgoingMessageTest extends TestCase
 {

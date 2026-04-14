@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Buttons;
+namespace Dizvestnov\LaravelMaxBot\Buttons;
 
-use {YourVendor}\LaravelMaxBot\Contracts\ButtonInterface;
+use Dizvestnov\LaravelMaxBot\Contracts\ButtonInterface;
 
 final class RequestGeoLocationButton implements ButtonInterface
 {

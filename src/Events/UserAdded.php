@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Events;
+namespace Dizvestnov\LaravelMaxBot\Events;
 
 final class UserAdded extends MaxBotEvent
 {

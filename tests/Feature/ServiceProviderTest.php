@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Tests\Feature;
+namespace Dizvestnov\LaravelMaxBot\Tests\Feature;
 
-use {YourVendor}\LaravelMaxBot\Api\MaxBotClient;
-use {YourVendor}\LaravelMaxBot\Contracts\MaxBotClientInterface;
-use {YourVendor}\LaravelMaxBot\Events\UpdateEventFactory;
-use {YourVendor}\LaravelMaxBot\Facades\MaxBot;
-use {YourVendor}\LaravelMaxBot\Tests\TestCase;
+use Dizvestnov\LaravelMaxBot\Api\MaxBotClient;
+use Dizvestnov\LaravelMaxBot\Contracts\MaxBotClientInterface;
+use Dizvestnov\LaravelMaxBot\Events\UpdateEventFactory;
+use Dizvestnov\LaravelMaxBot\Facades\MaxBot;
+use Dizvestnov\LaravelMaxBot\Tests\TestCase;
 
 class ServiceProviderTest extends TestCase
 {

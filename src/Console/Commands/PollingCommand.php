@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Console\Commands;
+namespace Dizvestnov\LaravelMaxBot\Console\Commands;
 
-use {YourVendor}\LaravelMaxBot\Contracts\MaxBotClientInterface;
-use {YourVendor}\LaravelMaxBot\Events\UpdateEventFactory;
-use {YourVendor}\LaravelMaxBot\Exceptions\MaxBotException;
+use Dizvestnov\LaravelMaxBot\Contracts\MaxBotClientInterface;
+use Dizvestnov\LaravelMaxBot\Events\UpdateEventFactory;
+use Dizvestnov\LaravelMaxBot\Exceptions\MaxBotException;
 use Illuminate\Console\Command;
 
 class PollingCommand extends Command

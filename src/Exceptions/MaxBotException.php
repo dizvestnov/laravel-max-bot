@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Exceptions;
+namespace Dizvestnov\LaravelMaxBot\Exceptions;
 
 use RuntimeException;
 
