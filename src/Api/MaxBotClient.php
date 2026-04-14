@@ -49,12 +49,15 @@ class MaxBotClient implements MaxBotClientInterface
         $messageId = $params['message_id'] ?? '';
         unset($params['message_id']);
 
-        return $this->request('PUT', 'messages/' . $messageId, ['json' => $params]);
+        return $this->request('PUT', 'messages', [
+            'query' => ['message_id' => $messageId],
+            'json'  => $params,
+        ]);
     }
 
     public function deleteMessage(string $messageId): array
     {
-        return $this->request('DELETE', 'messages/' . $messageId);
+        return $this->request('DELETE', 'messages', ['query' => ['message_id' => $messageId]]);
     }
 
     public function getMessage(string $messageId): array
@@ -153,7 +156,7 @@ class MaxBotClient implements MaxBotClientInterface
 
     public function deleteMember(int $chatId, int $userId): array
     {
-        return $this->request('DELETE', 'chats/' . $chatId . '/members/' . $userId);
+        return $this->request('DELETE', 'chats/' . $chatId . '/members', ['query' => ['user_id' => $userId]]);
     }
 
     public function getSubscriptions(): array
