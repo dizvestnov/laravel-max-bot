@@ -1,0 +1,48 @@
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['7.4', '8.0']
+        laravel: ['8.*', '9.*']
+        stability: [prefer-stable, prefer-lowest]
+        include:
+          - laravel: '8.*'
+            testbench: '^6.0'
+          - laravel: '9.*'
+            testbench: '^7.0'
+        exclude:
+          - php: '7.4'
+            laravel: '9.*'
+
+    name: PHP ${{ matrix.php }} / Laravel ${{ matrix.laravel }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mbstring, json, curl
+          coverage: none
+
+      - name: Install dependencies
+        run: |
+          composer require \
+            "laravel/framework:${{ matrix.laravel }}" \
+            "orchestra/testbench:${{ matrix.testbench }}" \
+            --no-interaction --no-update
+          composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+
+      - name: Run tests
+        run: ./vendor/bin/phpunit
+
+      - name: Code style
+        if: matrix.stability == 'prefer-stable' && matrix.php == '8.0'
+        run: ./vendor/bin/pint --test

@@ -1,0 +1,30 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {YourVendor}\LaravelMaxBot\Events;
+
+final class MessageReceived extends MaxBotEvent
+{
+    public function getMessageId(): ?string
+    {
+        return $this->update['message']['id'] ?? null;
+    }
+
+    public function getText(): ?string
+    {
+        return $this->update['message']['body']['text'] ?? null;
+    }
+
+    public function getSenderId(): ?int
+    {
+        return isset($this->update['message']['sender']['user_id'])
+            ? (int) $this->update['message']['sender']['user_id']
+            : null;
+    }
+
+    public function getMessage(): array
+    {
+        return $this->update['message'] ?? [];
+    }
+}
