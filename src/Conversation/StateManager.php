@@ -8,13 +8,10 @@ use Illuminate\Contracts\Cache\Repository;
 
 final class StateManager
 {
-    private Repository $cache;
-    private string $prefix;
-
-    public function __construct(Repository $cache, string $prefix = 'max-bot')
-    {
-        $this->cache  = $cache;
-        $this->prefix = $prefix;
+    public function __construct(
+        private readonly Repository $cache,
+        private readonly string $prefix = 'max-bot',
+    ) {
     }
 
     public function getState(int $userId): ?string

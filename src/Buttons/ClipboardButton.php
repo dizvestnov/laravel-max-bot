@@ -8,13 +8,10 @@ use {YourVendor}\LaravelMaxBot\Contracts\ButtonInterface;
 
 final class ClipboardButton implements ButtonInterface
 {
-    private string $text;
-    private string $payload;
-
-    private function __construct(string $text, string $payload)
-    {
-        $this->text    = $text;
-        $this->payload = $payload;
+    private function __construct(
+        private readonly string $text,
+        private readonly string $payload,
+    ) {
     }
 
     public static function make(string $text, string $payload): self

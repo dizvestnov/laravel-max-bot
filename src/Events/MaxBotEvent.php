@@ -6,11 +6,8 @@ namespace {YourVendor}\LaravelMaxBot\Events;
 
 abstract class MaxBotEvent
 {
-    public array $update;
-
-    public function __construct(array $update)
+    public function __construct(public readonly array $update)
     {
-        $this->update = $update;
     }
 
     public function getUpdateType(): string

@@ -8,17 +8,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: ['7.4', '8.0']
-        laravel: ['8.*', '9.*']
+        php: ['8.2', '8.3', '8.4']
+        laravel: ['12.*', '13.*']
         stability: [prefer-stable, prefer-lowest]
         include:
-          - laravel: '8.*'
-            testbench: '^6.0'
-          - laravel: '9.*'
-            testbench: '^7.0'
+          - laravel: '12.*'
+            testbench: '^10.0'
+          - laravel: '13.*'
+            testbench: '^11.0'
         exclude:
-          - php: '7.4'
-            laravel: '9.*'
+          - php: '8.2'
+            laravel: '13.*'
 
     name: PHP ${{ matrix.php }} / Laravel ${{ matrix.laravel }}
 
@@ -44,5 +44,9 @@ jobs:
         run: ./vendor/bin/phpunit
 
       - name: Code style
-        if: matrix.stability == 'prefer-stable' && matrix.php == '8.0'
+        if: matrix.stability == 'prefer-stable' && matrix.php == '8.3'
         run: ./vendor/bin/pint --test
+
+      - name: Static analysis
+        if: matrix.stability == 'prefer-stable' && matrix.php == '8.3'
+        run: ./vendor/bin/phpstan analyse

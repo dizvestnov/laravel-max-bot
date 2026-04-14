@@ -8,11 +8,9 @@ use {YourVendor}\LaravelMaxBot\Contracts\ButtonInterface;
 
 final class RequestGeoLocationButton implements ButtonInterface
 {
-    private string $text;
-
-    private function __construct(string $text)
-    {
-        $this->text = $text;
+    private function __construct(
+        private readonly string $text,
+    ) {
     }
 
     public static function make(string $text): self

@@ -8,13 +8,10 @@ use {YourVendor}\LaravelMaxBot\Contracts\ButtonInterface;
 
 final class LinkButton implements ButtonInterface
 {
-    private string $text;
-    private string $url;
-
-    private function __construct(string $text, string $url)
-    {
-        $this->text = $text;
-        $this->url  = $url;
+    private function __construct(
+        private readonly string $text,
+        private readonly string $url,
+    ) {
     }
 
     public static function make(string $text, string $url): self
