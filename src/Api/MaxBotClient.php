@@ -31,12 +31,12 @@ class MaxBotClient implements MaxBotClientInterface
 
     public function getBotInfo(): array
     {
-        return $this->request('GET', 'bots/me');
+        return $this->request('GET', 'me');
     }
 
     public function editBotInfo(array $data): array
     {
-        return $this->request('PATCH', 'bots/me', ['json' => $data]);
+        return $this->request('PATCH', 'me', ['json' => $data]);
     }
 
     public function sendMessage(array $params): array
