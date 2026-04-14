@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Api;
+namespace Dizvestnov\LaravelMaxBot\Api;
 
-use {YourVendor}\LaravelMaxBot\Contracts\MaxBotClientInterface;
-use {YourVendor}\LaravelMaxBot\Exceptions\ApiException;
-use {YourVendor}\LaravelMaxBot\Exceptions\RateLimitException;
-use {YourVendor}\LaravelMaxBot\Exceptions\UnauthorizedException;
+use Dizvestnov\LaravelMaxBot\Contracts\MaxBotClientInterface;
+use Dizvestnov\LaravelMaxBot\Exceptions\ApiException;
+use Dizvestnov\LaravelMaxBot\Exceptions\RateLimitException;
+use Dizvestnov\LaravelMaxBot\Exceptions\UnauthorizedException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;

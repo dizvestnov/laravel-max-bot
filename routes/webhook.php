@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use {YourVendor}\LaravelMaxBot\Http\Controllers\WebhookController;
-use {YourVendor}\LaravelMaxBot\Http\Middleware\VerifyMaxBotSignature;
+use Dizvestnov\LaravelMaxBot\Http\Controllers\WebhookController;
+use Dizvestnov\LaravelMaxBot\Http\Middleware\VerifyMaxBotSignature;
 use Illuminate\Support\Facades\Route;
 
 Route::post(

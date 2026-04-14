@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot;
+namespace Dizvestnov\LaravelMaxBot;
 
-use {YourVendor}\LaravelMaxBot\Api\MaxBotClient;
-use {YourVendor}\LaravelMaxBot\Console\Commands\PollingCommand;
-use {YourVendor}\LaravelMaxBot\Console\Commands\WebhookInfoCommand;
-use {YourVendor}\LaravelMaxBot\Console\Commands\WebhookRemoveCommand;
-use {YourVendor}\LaravelMaxBot\Console\Commands\WebhookSetCommand;
-use {YourVendor}\LaravelMaxBot\Contracts\MaxBotClientInterface;
-use {YourVendor}\LaravelMaxBot\Conversation\StateManager;
-use {YourVendor}\LaravelMaxBot\Events\UpdateEventFactory;
+use Dizvestnov\LaravelMaxBot\Api\MaxBotClient;
+use Dizvestnov\LaravelMaxBot\Console\Commands\PollingCommand;
+use Dizvestnov\LaravelMaxBot\Console\Commands\WebhookInfoCommand;
+use Dizvestnov\LaravelMaxBot\Console\Commands\WebhookRemoveCommand;
+use Dizvestnov\LaravelMaxBot\Console\Commands\WebhookSetCommand;
+use Dizvestnov\LaravelMaxBot\Contracts\MaxBotClientInterface;
+use Dizvestnov\LaravelMaxBot\Conversation\StateManager;
+use Dizvestnov\LaravelMaxBot\Events\UpdateEventFactory;
 use Illuminate\Support\ServiceProvider;
 
 class MaxBotServiceProvider extends ServiceProvider

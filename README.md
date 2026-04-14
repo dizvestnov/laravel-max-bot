@@ -1,8 +1,8 @@
 # Laravel MAX Bot
 
-[![Tests](https://github.com/{YOUR_VENDOR}/laravel-max-bot/actions/workflows/tests.yml/badge.svg)]()
-[![PHP](https://img.shields.io/packagist/php-v/{YOUR_VENDOR}/laravel-max-bot)]()
-[![License](https://img.shields.io/github/license/{YOUR_VENDOR}/laravel-max-bot)]()
+[![Tests](https://github.com/dizvestnov/laravel-max-bot/actions/workflows/tests.yml/badge.svg)]()
+[![PHP](https://img.shields.io/packagist/php-v/dizvestnov/laravel-max-bot)]()
+[![License](https://img.shields.io/github/license/dizvestnov/laravel-max-bot)]()
 
 Laravel пакет для [MAX messenger](https://max.ru) Bot API.
 
@@ -16,7 +16,7 @@ Laravel пакет для [MAX messenger](https://max.ru) Bot API.
 ## Installation
 
 ```bash
-composer require {YOUR_VENDOR}/laravel-max-bot
+composer require dizvestnov/laravel-max-bot
 ```
 
 Опубликовать конфиг:
@@ -47,9 +47,9 @@ MAX_BOT_TOKEN=your_bot_token_here
 ## Usage — sending a message
 
 ```php
-use {YourVendor}\LaravelMaxBot\Messages\OutgoingMessage;
-use {YourVendor}\LaravelMaxBot\Keyboard;
-use {YourVendor}\LaravelMaxBot\Buttons\CallbackButton;
+use Dizvestnov\LaravelMaxBot\Messages\OutgoingMessage;
+use Dizvestnov\LaravelMaxBot\Keyboard;
+use Dizvestnov\LaravelMaxBot\Buttons\CallbackButton;
 
 OutgoingMessage::create('Привет!')
     ->to($userId)
@@ -67,7 +67,7 @@ OutgoingMessage::create('Привет!')
 Or via facade:
 
 ```php
-use {YourVendor}\LaravelMaxBot\Facades\MaxBot;
+use Dizvestnov\LaravelMaxBot\Facades\MaxBot;
 
 MaxBot::sendMessage([
     'recipient' => ['user_id' => $userId],
@@ -94,7 +94,7 @@ Listen for events in `EventServiceProvider`:
 
 ```php
 protected $listen = [
-    \{YourVendor}\LaravelMaxBot\Events\MessageReceived::class => [
+    \Dizvestnov\LaravelMaxBot\Events\MessageReceived::class => [
         \App\Listeners\HandleIncomingMessage::class,
     ],
 ];
@@ -120,7 +120,7 @@ php artisan max-bot:poll
 ## Usage — conversation state
 
 ```php
-use {YourVendor}\LaravelMaxBot\Conversation\StateManager;
+use Dizvestnov\LaravelMaxBot\Conversation\StateManager;
 
 class RegistrationFlow
 {
@@ -149,10 +149,10 @@ class RegistrationFlow
 ## Usage — keyboard buttons
 
 ```php
-use {YourVendor}\LaravelMaxBot\Keyboard;
-use {YourVendor}\LaravelMaxBot\Buttons\CallbackButton;
-use {YourVendor}\LaravelMaxBot\Buttons\LinkButton;
-use {YourVendor}\LaravelMaxBot\Buttons\RequestContactButton;
+use Dizvestnov\LaravelMaxBot\Keyboard;
+use Dizvestnov\LaravelMaxBot\Buttons\CallbackButton;
+use Dizvestnov\LaravelMaxBot\Buttons\LinkButton;
+use Dizvestnov\LaravelMaxBot\Buttons\RequestContactButton;
 
 $keyboard = Keyboard::make()
     ->row(
@@ -178,7 +178,7 @@ $keyboard = Keyboard::make()
 Mock `MaxBotClientInterface` in your tests:
 
 ```php
-use {YourVendor}\LaravelMaxBot\Contracts\MaxBotClientInterface;
+use Dizvestnov\LaravelMaxBot\Contracts\MaxBotClientInterface;
 
 $this->mock(MaxBotClientInterface::class, function ($mock) {
     $mock->shouldReceive('sendMessage')

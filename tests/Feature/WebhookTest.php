@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Tests\Feature;
+namespace Dizvestnov\LaravelMaxBot\Tests\Feature;
 
-use {YourVendor}\LaravelMaxBot\Events\MessageReceived;
-use {YourVendor}\LaravelMaxBot\Jobs\ProcessWebhook;
-use {YourVendor}\LaravelMaxBot\Tests\TestCase;
+use Dizvestnov\LaravelMaxBot\Events\MessageReceived;
+use Dizvestnov\LaravelMaxBot\Jobs\ProcessWebhook;
+use Dizvestnov\LaravelMaxBot\Tests\TestCase;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Queue;
 

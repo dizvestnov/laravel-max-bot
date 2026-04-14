@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Events;
+namespace Dizvestnov\LaravelMaxBot\Events;
 
-use {YourVendor}\LaravelMaxBot\Enums\UpdateType;
+use Dizvestnov\LaravelMaxBot\Enums\UpdateType;
 
 final class UpdateEventFactory
 {

@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Tests\Unit\Buttons;
+namespace Dizvestnov\LaravelMaxBot\Tests\Unit\Buttons;
 
-use {YourVendor}\LaravelMaxBot\Buttons\CallbackButton;
-use {YourVendor}\LaravelMaxBot\Buttons\ClipboardButton;
-use {YourVendor}\LaravelMaxBot\Buttons\LinkButton;
-use {YourVendor}\LaravelMaxBot\Buttons\MessageButton;
-use {YourVendor}\LaravelMaxBot\Buttons\RequestContactButton;
-use {YourVendor}\LaravelMaxBot\Buttons\RequestGeoLocationButton;
-use {YourVendor}\LaravelMaxBot\Tests\TestCase;
+use Dizvestnov\LaravelMaxBot\Buttons\CallbackButton;
+use Dizvestnov\LaravelMaxBot\Buttons\ClipboardButton;
+use Dizvestnov\LaravelMaxBot\Buttons\LinkButton;
+use Dizvestnov\LaravelMaxBot\Buttons\MessageButton;
+use Dizvestnov\LaravelMaxBot\Buttons\RequestContactButton;
+use Dizvestnov\LaravelMaxBot\Buttons\RequestGeoLocationButton;
+use Dizvestnov\LaravelMaxBot\Tests\TestCase;
 
 class CallbackButtonTest extends TestCase
 {

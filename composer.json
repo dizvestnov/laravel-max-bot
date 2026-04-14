@@ -1,13 +1,13 @@
 {
-    "name": "{YOUR_VENDOR}/laravel-max-bot",
+    "name": "dizvestnov/laravel-max-bot",
     "description": "Laravel package for MAX messenger Bot API",
     "type": "library",
     "license": "MIT",
     "keywords": ["laravel", "max", "messenger", "bot", "chatbot", "api"],
     "authors": [
         {
-            "name": "{Your Name}",
-            "email": "{your@email.com}"
+            "name": "Dmitry Dizvestnov",
+            "email": "dizvestnov@example.com"
         }
     ],
     "require": {
@@ -28,21 +28,21 @@
     },
     "autoload": {
         "psr-4": {
-            "{YourVendor}\\LaravelMaxBot\\": "src/"
+            "Dizvestnov\\LaravelMaxBot\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "{YourVendor}\\LaravelMaxBot\\Tests\\": "tests/"
+            "Dizvestnov\\LaravelMaxBot\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "{YourVendor}\\LaravelMaxBot\\MaxBotServiceProvider"
+                "Dizvestnov\\LaravelMaxBot\\MaxBotServiceProvider"
             ],
             "aliases": {
-                "MaxBot": "{YourVendor}\\LaravelMaxBot\\Facades\\MaxBot"
+                "MaxBot": "Dizvestnov\\LaravelMaxBot\\Facades\\MaxBot"
             }
         }
     },

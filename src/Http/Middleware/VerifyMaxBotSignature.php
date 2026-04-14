@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Http\Middleware;
+namespace Dizvestnov\LaravelMaxBot\Http\Middleware;
 
-use {YourVendor}\LaravelMaxBot\Exceptions\WebhookSignatureException;
+use Dizvestnov\LaravelMaxBot\Exceptions\WebhookSignatureException;
 use Closure;
 use Illuminate\Http\Request;
 

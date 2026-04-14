@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Conversation;
+namespace Dizvestnov\LaravelMaxBot\Conversation;
 
 use Illuminate\Contracts\Cache\Repository;
 

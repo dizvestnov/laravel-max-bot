@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Facades;
+namespace Dizvestnov\LaravelMaxBot\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -38,7 +38,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static array getUploadUrl(string $type)
  * @method static array getVideoDetails(string $videoToken)
  *
- * @see \{YourVendor}\LaravelMaxBot\Contracts\MaxBotClientInterface
+ * @see \Dizvestnov\LaravelMaxBot\Contracts\MaxBotClientInterface
  */
 class MaxBot extends Facade
 {

@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Tests\Unit\Events;
+namespace Dizvestnov\LaravelMaxBot\Tests\Unit\Events;
 
-use {YourVendor}\LaravelMaxBot\Events\BotAdded;
-use {YourVendor}\LaravelMaxBot\Events\BotRemoved;
-use {YourVendor}\LaravelMaxBot\Events\BotStarted;
-use {YourVendor}\LaravelMaxBot\Events\CallbackReceived;
-use {YourVendor}\LaravelMaxBot\Events\ChatTitleChanged;
-use {YourVendor}\LaravelMaxBot\Events\MessageEdited;
-use {YourVendor}\LaravelMaxBot\Events\MessageReceived;
-use {YourVendor}\LaravelMaxBot\Events\MessageRemoved;
-use {YourVendor}\LaravelMaxBot\Events\UpdateEventFactory;
-use {YourVendor}\LaravelMaxBot\Events\UserAdded;
-use {YourVendor}\LaravelMaxBot\Events\UserRemoved;
-use {YourVendor}\LaravelMaxBot\Tests\TestCase;
+use Dizvestnov\LaravelMaxBot\Events\BotAdded;
+use Dizvestnov\LaravelMaxBot\Events\BotRemoved;
+use Dizvestnov\LaravelMaxBot\Events\BotStarted;
+use Dizvestnov\LaravelMaxBot\Events\CallbackReceived;
+use Dizvestnov\LaravelMaxBot\Events\ChatTitleChanged;
+use Dizvestnov\LaravelMaxBot\Events\MessageEdited;
+use Dizvestnov\LaravelMaxBot\Events\MessageReceived;
+use Dizvestnov\LaravelMaxBot\Events\MessageRemoved;
+use Dizvestnov\LaravelMaxBot\Events\UpdateEventFactory;
+use Dizvestnov\LaravelMaxBot\Events\UserAdded;
+use Dizvestnov\LaravelMaxBot\Events\UserRemoved;
+use Dizvestnov\LaravelMaxBot\Tests\TestCase;
 
 class UpdateEventFactoryTest extends TestCase
 {

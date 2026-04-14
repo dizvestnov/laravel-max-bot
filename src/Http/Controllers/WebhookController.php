@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Http\Controllers;
+namespace Dizvestnov\LaravelMaxBot\Http\Controllers;
 
-use {YourVendor}\LaravelMaxBot\Events\UpdateEventFactory;
-use {YourVendor}\LaravelMaxBot\Jobs\ProcessWebhook;
+use Dizvestnov\LaravelMaxBot\Events\UpdateEventFactory;
+use Dizvestnov\LaravelMaxBot\Jobs\ProcessWebhook;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;

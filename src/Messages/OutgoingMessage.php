@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace {YourVendor}\LaravelMaxBot\Messages;
+namespace Dizvestnov\LaravelMaxBot\Messages;
 
-use {YourVendor}\LaravelMaxBot\Contracts\MaxBotClientInterface;
-use {YourVendor}\LaravelMaxBot\Keyboard;
+use Dizvestnov\LaravelMaxBot\Contracts\MaxBotClientInterface;
+use Dizvestnov\LaravelMaxBot\Keyboard;
 
 final class OutgoingMessage
 {
