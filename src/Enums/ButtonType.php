@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Dizvestnov\LaravelMaxBot\Enums;
 
-enum ButtonType: string
+final class ButtonType
 {
-    case Callback       = 'callback';
-    case Link           = 'link';
-    case RequestContact = 'request_contact';
-    case RequestGeo     = 'request_geo_location';
-    case Message        = 'message';
-    case Clipboard      = 'clipboard';
-    case OpenApp        = 'open_app';
+    public const CALLBACK        = 'callback';
+    public const LINK            = 'link';
+    public const REQUEST_CONTACT = 'request_contact';
+    public const REQUEST_GEO     = 'request_geo_location';
+    public const MESSAGE         = 'message';
+    public const CLIPBOARD       = 'clipboard';
+    public const OPEN_APP        = 'open_app';
 }

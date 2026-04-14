@@ -33,8 +33,9 @@ return [
     |--------------------------------------------------------------------------
     */
     'webhook' => [
-        'secret' => env('MAX_BOT_WEBHOOK_SECRET', null),
-        'route'  => [
+        'secret'  => env('MAX_BOT_WEBHOOK_SECRET', null),
+        'version' => env('MAX_BOT_WEBHOOK_VERSION', null),
+        'route'   => [
             'enabled'    => true,
             'path'       => env('MAX_BOT_WEBHOOK_PATH', 'max-bot/webhook'),
             'middleware' => ['api'],
