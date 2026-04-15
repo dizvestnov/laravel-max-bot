@@ -10,8 +10,7 @@ final class RequestContactButton implements ButtonInterface
 {
     private function __construct(
         private readonly string $text,
-    ) {
-    }
+    ) {}
 
     public static function make(string $text): self
     {

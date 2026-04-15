@@ -19,8 +19,8 @@ class CallbackButtonTest extends TestCase
         $button = CallbackButton::make('Click Me', 'btn_click');
 
         $this->assertSame([
-            'type'    => 'callback',
-            'text'    => 'Click Me',
+            'type' => 'callback',
+            'text' => 'Click Me',
             'payload' => 'btn_click',
         ], $button->toArray());
     }
@@ -32,7 +32,7 @@ class CallbackButtonTest extends TestCase
         $this->assertSame([
             'type' => 'link',
             'text' => 'Visit Site',
-            'url'  => 'https://example.com',
+            'url' => 'https://example.com',
         ], $button->toArray());
     }
 
@@ -61,8 +61,8 @@ class CallbackButtonTest extends TestCase
         $button = MessageButton::make('Send Message', 'payload_msg');
 
         $this->assertSame([
-            'type'    => 'message',
-            'text'    => 'Send Message',
+            'type' => 'message',
+            'text' => 'Send Message',
             'payload' => 'payload_msg',
         ], $button->toArray());
     }
@@ -72,8 +72,8 @@ class CallbackButtonTest extends TestCase
         $button = ClipboardButton::make('Copy', 'copy_text');
 
         $this->assertSame([
-            'type'    => 'clipboard',
-            'text'    => 'Copy',
+            'type' => 'clipboard',
+            'text' => 'Copy',
             'payload' => 'copy_text',
         ], $button->toArray());
     }

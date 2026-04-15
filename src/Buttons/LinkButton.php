@@ -11,8 +11,7 @@ final class LinkButton implements ButtonInterface
     private function __construct(
         private readonly string $text,
         private readonly string $url,
-    ) {
-    }
+    ) {}
 
     public static function make(string $text, string $url): self
     {
@@ -24,7 +23,7 @@ final class LinkButton implements ButtonInterface
         return [
             'type' => 'link',
             'text' => $this->text,
-            'url'  => $this->url,
+            'url' => $this->url,
         ];
     }
 }

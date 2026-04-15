@@ -18,7 +18,7 @@ class MaxBotServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/max-bot.php', 'max-bot');
+        $this->mergeConfigFrom(__DIR__.'/../config/max-bot.php', 'max-bot');
 
         $this->app->singleton(MaxBotClient::class, function ($app) {
             return new MaxBotClient(
@@ -48,7 +48,7 @@ class MaxBotServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/max-bot.php' => config_path('max-bot.php'),
+                __DIR__.'/../config/max-bot.php' => config_path('max-bot.php'),
             ], 'max-bot-config');
         }
     }
@@ -56,7 +56,7 @@ class MaxBotServiceProvider extends ServiceProvider
     private function registerRoutes(): void
     {
         if (config('max-bot.webhook.route.enabled')) {
-            $this->loadRoutesFrom(__DIR__ . '/../routes/webhook.php');
+            $this->loadRoutesFrom(__DIR__.'/../routes/webhook.php');
         }
     }
 

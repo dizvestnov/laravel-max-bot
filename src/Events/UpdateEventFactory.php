@@ -17,14 +17,14 @@ final class UpdateEventFactory
         }
 
         $eventClass = match ($type) {
-            UpdateType::MessageCreated   => MessageReceived::class,
-            UpdateType::MessageEdited    => MessageEdited::class,
-            UpdateType::MessageRemoved   => MessageRemoved::class,
-            UpdateType::BotStarted       => BotStarted::class,
-            UpdateType::BotAdded         => BotAdded::class,
-            UpdateType::BotRemoved       => BotRemoved::class,
-            UpdateType::UserAdded        => UserAdded::class,
-            UpdateType::UserRemoved      => UserRemoved::class,
+            UpdateType::MessageCreated => MessageReceived::class,
+            UpdateType::MessageEdited => MessageEdited::class,
+            UpdateType::MessageRemoved => MessageRemoved::class,
+            UpdateType::BotStarted => BotStarted::class,
+            UpdateType::BotAdded => BotAdded::class,
+            UpdateType::BotRemoved => BotRemoved::class,
+            UpdateType::UserAdded => UserAdded::class,
+            UpdateType::UserRemoved => UserRemoved::class,
             UpdateType::ChatTitleChanged => ChatTitleChanged::class,
             UpdateType::CallbackReceived => CallbackReceived::class,
         };

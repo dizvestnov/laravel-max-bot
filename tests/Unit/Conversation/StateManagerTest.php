@@ -16,7 +16,7 @@ class StateManagerTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $cache         = new Repository(new ArrayStore());
+        $cache = new Repository(new ArrayStore);
         $this->manager = new StateManager($cache);
     }
 

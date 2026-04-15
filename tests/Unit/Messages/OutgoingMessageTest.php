@@ -21,10 +21,10 @@ class OutgoingMessageTest extends TestCase
     public function test_to_does_not_mutate_original(): void
     {
         $original = OutgoingMessage::create('Hello');
-        $cloned   = $original->to(123);
+        $cloned = $original->to(123);
 
         $arrayOriginal = $original->toArray();
-        $arrayCloned   = $cloned->toArray();
+        $arrayCloned = $cloned->toArray();
 
         $this->assertArrayNotHasKey('recipient', $arrayOriginal);
         $this->assertSame(['user_id' => 123], $arrayCloned['recipient']);
@@ -33,10 +33,10 @@ class OutgoingMessageTest extends TestCase
     public function test_in_chat_does_not_mutate_original(): void
     {
         $original = OutgoingMessage::create('Hello');
-        $cloned   = $original->inChat(456);
+        $cloned = $original->inChat(456);
 
         $arrayOriginal = $original->toArray();
-        $arrayCloned   = $cloned->toArray();
+        $arrayCloned = $cloned->toArray();
 
         $this->assertArrayNotHasKey('recipient', $arrayOriginal);
         $this->assertSame(['chat_id' => 456], $arrayCloned['recipient']);
@@ -91,10 +91,10 @@ class OutgoingMessageTest extends TestCase
 
     public function test_immutability_chain(): void
     {
-        $base    = OutgoingMessage::create('Test');
-        $step1   = $base->to(1);
-        $step2   = $step1->markdown();
-        $step3   = $step2->replyTo('msg-1');
+        $base = OutgoingMessage::create('Test');
+        $step1 = $base->to(1);
+        $step2 = $step1->markdown();
+        $step3 = $step2->replyTo('msg-1');
 
         // Each step is a different object
         $this->assertNotSame($base, $step1);

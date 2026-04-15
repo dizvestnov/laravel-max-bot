@@ -11,8 +11,7 @@ final class StateManager
     public function __construct(
         private readonly Repository $cache,
         private readonly string $prefix = 'max-bot',
-    ) {
-    }
+    ) {}
 
     public function getState(int $userId): ?string
     {

@@ -32,7 +32,7 @@ abstract class TestCase extends BaseTestCase
         $app['config']->set('max-bot.webhook.route.middleware', ['api']);
         $app['config']->set('max-bot.http', [
             'base_uri' => 'https://platform-api.max.ru',
-            'timeout'  => 30,
+            'timeout' => 30,
         ]);
     }
 }

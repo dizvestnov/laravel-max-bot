@@ -6,11 +6,11 @@ namespace Dizvestnov\LaravelMaxBot\Enums;
 
 enum ButtonType: string
 {
-    case Callback       = 'callback';
-    case Link           = 'link';
+    case Callback = 'callback';
+    case Link = 'link';
     case RequestContact = 'request_contact';
-    case RequestGeo     = 'request_geo_location';
-    case Message        = 'message';
-    case Clipboard      = 'clipboard';
-    case OpenApp        = 'open_app';
+    case RequestGeo = 'request_geo_location';
+    case Message = 'message';
+    case Clipboard = 'clipboard';
+    case OpenApp = 'open_app';
 }

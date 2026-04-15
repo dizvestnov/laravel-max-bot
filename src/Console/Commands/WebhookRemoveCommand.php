@@ -9,7 +9,8 @@ use Illuminate\Console\Command;
 
 class WebhookRemoveCommand extends Command
 {
-    protected $signature   = 'max-bot:webhook:remove';
+    protected $signature = 'max-bot:webhook:remove';
+
     protected $description = 'Remove the MAX Bot webhook subscription';
 
     private MaxBotClientInterface $client;
@@ -30,7 +31,7 @@ class WebhookRemoveCommand extends Command
             return self::SUCCESS;
         }
 
-        $this->error('Failed to remove webhook: ' . ($result['message'] ?? 'Unknown error'));
+        $this->error('Failed to remove webhook: '.($result['message'] ?? 'Unknown error'));
 
         return self::FAILURE;
     }

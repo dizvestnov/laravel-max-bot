@@ -9,7 +9,8 @@ use Illuminate\Console\Command;
 
 class WebhookSetCommand extends Command
 {
-    protected $signature   = 'max-bot:webhook:set {url : The webhook URL}';
+    protected $signature = 'max-bot:webhook:set {url : The webhook URL}';
+
     protected $description = 'Set the MAX Bot webhook URL';
 
     private MaxBotClientInterface $client;
@@ -35,12 +36,12 @@ class WebhookSetCommand extends Command
         $result = $this->client->subscribe($params);
 
         if (isset($result['ok']) && $result['ok'] === true) {
-            $this->info('Webhook set successfully to: ' . $url);
+            $this->info('Webhook set successfully to: '.$url);
 
             return self::SUCCESS;
         }
 
-        $this->error('Failed to set webhook: ' . ($result['message'] ?? 'Unknown error'));
+        $this->error('Failed to set webhook: '.($result['message'] ?? 'Unknown error'));
 
         return self::FAILURE;
     }

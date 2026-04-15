@@ -7,11 +7,12 @@ namespace Dizvestnov\LaravelMaxBot\Exceptions;
 class ApiException extends MaxBotException
 {
     private int $statusCode;
+
     private array $responseBody;
 
     public function __construct(int $statusCode, array $responseBody, string $message = '')
     {
-        $this->statusCode   = $statusCode;
+        $this->statusCode = $statusCode;
         $this->responseBody = $responseBody;
 
         if ($message === '') {

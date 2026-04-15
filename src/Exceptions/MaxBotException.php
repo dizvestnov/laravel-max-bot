@@ -6,6 +6,4 @@ namespace Dizvestnov\LaravelMaxBot\Exceptions;
 
 use RuntimeException;
 
-class MaxBotException extends RuntimeException
-{
-}
+class MaxBotException extends RuntimeException {}

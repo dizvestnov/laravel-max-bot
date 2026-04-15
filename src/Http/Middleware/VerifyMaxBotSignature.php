@@ -23,10 +23,10 @@ class VerifyMaxBotSignature
             abort(403, 'Missing webhook signature header.');
         }
 
-        $rawBody  = $request->getContent();
-        $expected = 'sha256=' . hash_hmac('sha256', $rawBody, $secret);
+        $rawBody = $request->getContent();
+        $expected = 'sha256='.hash_hmac('sha256', $rawBody, $secret);
 
-        if (!hash_equals($expected, $signature)) {
+        if (! hash_equals($expected, $signature)) {
             abort(403, 'Invalid webhook signature.');
         }
 

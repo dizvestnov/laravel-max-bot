@@ -11,8 +11,7 @@ final class CallbackButton implements ButtonInterface
     private function __construct(
         private readonly string $text,
         private readonly string $payload,
-    ) {
-    }
+    ) {}
 
     public static function make(string $text, string $payload): self
     {
@@ -22,8 +21,8 @@ final class CallbackButton implements ButtonInterface
     public function toArray(): array
     {
         return [
-            'type'    => 'callback',
-            'text'    => $this->text,
+            'type' => 'callback',
+            'text' => $this->text,
             'payload' => $this->payload,
         ];
     }
