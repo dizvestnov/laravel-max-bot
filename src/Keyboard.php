@@ -14,7 +14,7 @@ final class Keyboard
 
     public static function make(): self
     {
-        return new self;
+        return new self();
     }
 
     public function row(ButtonInterface ...$buttons): self

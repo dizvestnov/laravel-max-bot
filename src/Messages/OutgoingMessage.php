@@ -25,7 +25,7 @@ final class OutgoingMessage
 
     public static function create(string $text = ''): self
     {
-        $instance = new self;
+        $instance = new self();
         $instance->text = $text;
 
         return $instance;

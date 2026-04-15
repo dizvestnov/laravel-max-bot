@@ -24,7 +24,7 @@ class UpdateEventFactoryTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->factory = new UpdateEventFactory;
+        $this->factory = new UpdateEventFactory();
     }
 
     public function test_message_created_returns_message_received(): void

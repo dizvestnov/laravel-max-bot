@@ -45,4 +45,4 @@ jobs:
 
       - name: Code style
         if: matrix.stability == 'prefer-stable' && matrix.php == '8.0'
-        run: ./vendor/bin/pint --test
+        run: ./vendor/bin/php-cs-fixer fix --dry-run --diff --config=.php-cs-fixer.dist.php
