@@ -35,7 +35,7 @@ class WebhookSetCommand extends Command
 
         $result = $this->client->subscribe($params);
 
-        if (isset($result['ok']) && $result['ok'] === true) {
+        if (($result['success'] ?? $result['ok'] ?? false) === true) {
             $this->info('Webhook set successfully to: '.$url);
 
             return self::SUCCESS;

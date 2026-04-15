@@ -25,7 +25,7 @@ class WebhookRemoveCommand extends Command
     {
         $result = $this->client->unsubscribe();
 
-        if (isset($result['ok']) && $result['ok'] === true) {
+        if (($result['success'] ?? $result['ok'] ?? false) === true) {
             $this->info('Webhook subscription removed successfully.');
 
             return self::SUCCESS;
