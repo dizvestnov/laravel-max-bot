@@ -9,11 +9,12 @@ use Dizvestnov\LaravelMaxBot\Contracts\ButtonInterface;
 final class ClipboardButton implements ButtonInterface
 {
     private string $text;
+
     private string $payload;
 
     private function __construct(string $text, string $payload)
     {
-        $this->text    = $text;
+        $this->text = $text;
         $this->payload = $payload;
     }
 
@@ -25,8 +26,8 @@ final class ClipboardButton implements ButtonInterface
     public function toArray(): array
     {
         return [
-            'type'    => 'clipboard',
-            'text'    => $this->text,
+            'type' => 'clipboard',
+            'text' => $this->text,
             'payload' => $this->payload,
         ];
     }

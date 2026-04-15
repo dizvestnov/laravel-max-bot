@@ -9,11 +9,12 @@ use Illuminate\Contracts\Cache\Repository;
 final class StateManager
 {
     private Repository $cache;
+
     private string $prefix;
 
     public function __construct(Repository $cache, string $prefix = 'max-bot')
     {
-        $this->cache  = $cache;
+        $this->cache = $cache;
         $this->prefix = $prefix;
     }
 

@@ -9,7 +9,8 @@ use Illuminate\Console\Command;
 
 class WebhookInfoCommand extends Command
 {
-    protected $signature   = 'max-bot:webhook:info';
+    protected $signature = 'max-bot:webhook:info';
+
     protected $description = 'Display current MAX Bot webhook subscription info';
 
     private MaxBotClientInterface $client;
@@ -31,8 +32,8 @@ class WebhookInfoCommand extends Command
         }
 
         foreach ($result['subscriptions'] as $subscription) {
-            $this->line('URL     : ' . ($subscription['url'] ?? 'N/A'));
-            $this->line('Time    : ' . ($subscription['time'] ?? 'N/A'));
+            $this->line('URL     : '.($subscription['url'] ?? 'N/A'));
+            $this->line('Time    : '.($subscription['time'] ?? 'N/A'));
         }
 
         return self::SUCCESS;

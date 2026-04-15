@@ -9,20 +9,23 @@ use Dizvestnov\LaravelMaxBot\Keyboard;
 
 final class OutgoingMessage
 {
-    private ?int $userId           = null;
-    private ?int $chatId           = null;
-    private string $text           = '';
-    private array $attachments     = [];
-    private ?string $format        = null;
+    private ?int $userId = null;
+
+    private ?int $chatId = null;
+
+    private string $text = '';
+
+    private array $attachments = [];
+
+    private ?string $format = null;
+
     private ?string $replyToMessageId = null;
 
-    private function __construct()
-    {
-    }
+    private function __construct() {}
 
     public static function create(string $text = ''): self
     {
-        $instance       = new self();
+        $instance = new self;
         $instance->text = $text;
 
         return $instance;
@@ -30,7 +33,7 @@ final class OutgoingMessage
 
     public function to(int $userId): self
     {
-        $clone         = clone $this;
+        $clone = clone $this;
         $clone->userId = $userId;
 
         return $clone;
@@ -38,7 +41,7 @@ final class OutgoingMessage
 
     public function inChat(int $chatId): self
     {
-        $clone         = clone $this;
+        $clone = clone $this;
         $clone->chatId = $chatId;
 
         return $clone;
@@ -46,7 +49,7 @@ final class OutgoingMessage
 
     public function withKeyboard(Keyboard $keyboard): self
     {
-        $clone                = clone $this;
+        $clone = clone $this;
         $clone->attachments[] = $keyboard->toArray();
 
         return $clone;
@@ -54,15 +57,15 @@ final class OutgoingMessage
 
     public function replyTo(string $messageId): self
     {
-        $clone                    = clone $this;
-        $clone->replyToMessageId  = $messageId;
+        $clone = clone $this;
+        $clone->replyToMessageId = $messageId;
 
         return $clone;
     }
 
     public function markdown(): self
     {
-        $clone         = clone $this;
+        $clone = clone $this;
         $clone->format = 'markdown';
 
         return $clone;
@@ -70,7 +73,7 @@ final class OutgoingMessage
 
     public function html(): self
     {
-        $clone         = clone $this;
+        $clone = clone $this;
         $clone->format = 'html';
 
         return $clone;
@@ -92,13 +95,13 @@ final class OutgoingMessage
             $payload['format'] = $this->format;
         }
 
-        if (!empty($this->attachments)) {
+        if (! empty($this->attachments)) {
             $payload['attachments'] = $this->attachments;
         }
 
         if ($this->replyToMessageId !== null) {
             $payload['link'] = [
-                'type'       => 'reply',
+                'type' => 'reply',
                 'message_id' => $this->replyToMessageId,
             ];
         }

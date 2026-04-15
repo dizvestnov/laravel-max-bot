@@ -16,11 +16,11 @@ class WebhookTest extends TestCase
     {
         return [
             'update_type' => $type,
-            'timestamp'   => time(),
-            'message'     => [
-                'id'     => 'msg-1',
+            'timestamp' => time(),
+            'message' => [
+                'id' => 'msg-1',
                 'sender' => ['user_id' => 42],
-                'body'   => ['text' => 'Hello'],
+                'body' => ['text' => 'Hello'],
             ],
         ];
     }
@@ -49,8 +49,8 @@ class WebhookTest extends TestCase
     {
         config(['max-bot.webhook.secret' => 'my-secret']);
 
-        $body      = json_encode($this->makeUpdate());
-        $signature = 'sha256=' . hash_hmac('sha256', $body, 'my-secret');
+        $body = json_encode($this->makeUpdate());
+        $signature = 'sha256='.hash_hmac('sha256', $body, 'my-secret');
 
         $response = $this->call(
             'POST',

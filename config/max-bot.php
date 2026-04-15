@@ -20,8 +20,8 @@ return [
     */
     'http' => [
         'base_uri' => env('MAX_BOT_BASE_URI', 'https://platform-api.max.ru'),
-        'timeout'  => (int) env('MAX_BOT_TIMEOUT', 30),
-        'retry'    => [
+        'timeout' => (int) env('MAX_BOT_TIMEOUT', 30),
+        'retry' => [
             'times' => 3,
             'sleep' => 100, // milliseconds base for exponential backoff
         ],
@@ -33,11 +33,11 @@ return [
     |--------------------------------------------------------------------------
     */
     'webhook' => [
-        'secret'  => env('MAX_BOT_WEBHOOK_SECRET', null),
+        'secret' => env('MAX_BOT_WEBHOOK_SECRET', null),
         'version' => env('MAX_BOT_WEBHOOK_VERSION', null),
-        'route'   => [
-            'enabled'    => true,
-            'path'       => env('MAX_BOT_WEBHOOK_PATH', 'max-bot/webhook'),
+        'route' => [
+            'enabled' => true,
+            'path' => env('MAX_BOT_WEBHOOK_PATH', 'max-bot/webhook'),
             'middleware' => ['api'],
         ],
     ],
@@ -48,8 +48,8 @@ return [
     |--------------------------------------------------------------------------
     */
     'queue' => [
-        'enabled'    => (bool) env('MAX_BOT_QUEUE_ENABLED', false),
+        'enabled' => (bool) env('MAX_BOT_QUEUE_ENABLED', false),
         'connection' => env('MAX_BOT_QUEUE_CONNECTION', null),
-        'queue'      => env('MAX_BOT_QUEUE_NAME', 'default'),
+        'queue' => env('MAX_BOT_QUEUE_NAME', 'default'),
     ],
 ];

@@ -10,8 +10,6 @@ use Dizvestnov\LaravelMaxBot\Exceptions\RateLimitException;
 use Dizvestnov\LaravelMaxBot\Exceptions\UnauthorizedException;
 use Dizvestnov\LaravelMaxBot\Tests\TestCase;
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
@@ -22,15 +20,15 @@ class MaxBotClientTest extends TestCase
 {
     private function makeClient(array $responses, array &$container = []): MaxBotClient
     {
-        $mock    = new MockHandler($responses);
+        $mock = new MockHandler($responses);
         $history = Middleware::history($container);
-        $stack   = HandlerStack::create($mock);
+        $stack = HandlerStack::create($mock);
         $stack->push($history);
 
         $client = new MaxBotClient('test-token', [
             'base_uri' => 'https://platform-api.max.ru',
-            'timeout'  => 5,
-            'retry'    => ['times' => 3, 'sleep' => 1],
+            'timeout' => 5,
+            'retry' => ['times' => 3, 'sleep' => 1],
         ]);
 
         // Inject Guzzle client via reflection
@@ -44,7 +42,7 @@ class MaxBotClientTest extends TestCase
     public function test_get_bot_info_returns_array_on_200(): void
     {
         $container = [];
-        $client    = $this->makeClient([
+        $client = $this->makeClient([
             new Response(200, [], json_encode(['user_id' => 1, 'name' => 'TestBot'])),
         ], $container);
 
@@ -56,7 +54,7 @@ class MaxBotClientTest extends TestCase
     public function test_client_sends_authorization_header(): void
     {
         $container = [];
-        $client    = $this->makeClient([
+        $client = $this->makeClient([
             new Response(200, [], json_encode(['ok' => true])),
         ], $container);
 
@@ -64,7 +62,7 @@ class MaxBotClientTest extends TestCase
 
         /** @var array $transaction */
         $transaction = $container[0];
-        /** @var \GuzzleHttp\Psr7\Request $request */
+        /** @var Request $request */
         $request = $transaction['request'];
 
         $this->assertSame('test-token', $request->getHeaderLine('Authorization'));
@@ -73,7 +71,7 @@ class MaxBotClientTest extends TestCase
     public function test_send_message_posts_to_messages_endpoint(): void
     {
         $container = [];
-        $client    = $this->makeClient([
+        $client = $this->makeClient([
             new Response(200, [], json_encode(['message_id' => 'msg-123'])),
         ], $container);
 
@@ -83,7 +81,7 @@ class MaxBotClientTest extends TestCase
 
         /** @var array $transaction */
         $transaction = $container[0];
-        /** @var \GuzzleHttp\Psr7\Request $request */
+        /** @var Request $request */
         $request = $transaction['request'];
 
         $this->assertSame('POST', $request->getMethod());
@@ -94,7 +92,7 @@ class MaxBotClientTest extends TestCase
     {
         $this->expectException(UnauthorizedException::class);
 
-        $mock  = new MockHandler([
+        $mock = new MockHandler([
             new Response(401, [], json_encode(['message' => 'Unauthorized'])),
         ]);
         $stack = HandlerStack::create($mock);
